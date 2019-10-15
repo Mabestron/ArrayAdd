@@ -14,7 +14,6 @@ public class ArrayAdd
 		//Array Declaration
 		byte[] vector = new byte [ELEMENTS_ARRAY];
 		byte[] vector2 = new byte [ELEMENTS_ARRAY];
-		byte[] vector2inv = new byte [ELEMENTS_ARRAY];
 		byte[] vector3 = new byte [ELEMENTS_ARRAY];
 		
 		//Object declaration
@@ -27,6 +26,7 @@ public class ArrayAdd
 		{
 			vector[i]= (byte) randomNumbers.nextInt(10);
 			System.out.println(vector[i]);
+			
 		}
 		
 		System.out.println(" Vector 2");
@@ -38,23 +38,16 @@ public class ArrayAdd
 			System.out.println(vector2[i]);
 		}
 		
-		System.out.println("Vector 2 Invertido");
-		//se invierte el segundo vector
-		for (int j=ELEMENTS_ARRAY-1;j>=0;j--)
+		//Suma de Vectores el primero con el ultimo
+		System.out.println("Suma de Vectores");
+		int cont=ELEMENTS_ARRAY-1;
+		for (int i=0;i<=ELEMENTS_ARRAY-1;i++)
 		{
-		vector2inv[j]= (byte) vector2[j];	
-		System.out.println(vector2inv[j]);
+				vector3[i]=(byte) (vector[i]+vector2[cont]);
+				cont--;
+				System.out.println(vector3[i]);	
+			
 		}
-		
-		//suma de los valores
-		System.out.println("Vectores Sumados");
-		
-		for (int i=ELEMENTS_ARRAY-1;i>=0;i--)
-		{
-			vector3[i]=(byte) (vector[i]+vector2inv[i]);	
-			System.out.println(vector3[i]);	
-		}
-		 
 	}
 
 }
